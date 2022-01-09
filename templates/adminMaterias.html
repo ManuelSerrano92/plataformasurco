@@ -1,0 +1,87 @@
+{% extends "baseContenido.html" %}
+
+{% block section %}
+
+
+<section class="sectionPrincipales" onload="administrarMaterias()">
+    
+         
+    <h1 id="tituloVistaSection" class="tituloVistaSection"></h1>
+
+    <h1 class="buttonPequeño">MATERIAS</h1>
+
+    {% for message in get_flashed_messages() %}
+    <div class="mensaje">
+        <p> {{message}} </p>
+    </div>
+    {% endfor %}
+
+    <div class="cajaMaterias">
+        <div id="listaMaterias" class="listaMaterias">
+        </div>
+       
+        
+        <div class="contenedorMateria">
+            <div class="materia">
+                
+
+                <p>Lista de todos los estudiantes:</p>
+                <div class="listaGeneralEstudiantes" id="listaGeneralEstudiantes">
+                </div>
+
+                <p>Lista de estudiantes en la materia seleccionada:</p>
+                <div class="listaGeneralEstudiantes" id="listaEstudiantesMatriculados">
+                </div>
+
+                <div >
+                    <form method="POST" class="contenedorFormQuitaYAgrega">
+                    {{formularioAgregarEstudiante.hidden_tag()}}
+                    <div class="cajaCamposRetirarInsertar">
+                    {{formularioAgregarEstudiante.nombreMateria(id="nombreMateriaCampoAgregaEstudiante", class="campoFormulario")}}
+                    {{formularioAgregarEstudiante.codigoEstudianteAgrega(class="inputLogin", placeholder="Codigo estudiante a agregar")}}
+                    </div>
+                    {{formularioAgregarEstudiante.agregarEstudiante(class="boton", onclick="alertaVentana('Alumno Agregado')")}}
+                    </form>
+                </div>
+                <div >
+                    <form method="POST" class="contenedorFormQuitaYAgrega">
+                    {{formularioRemoverEstudiante.hidden_tag()}}
+                    <div class="cajaCamposRetirarInsertar">
+                    {{formularioRemoverEstudiante.nombreMateria(id="nombreMateriaCampoRemoverEstudiante", class="campoFormulario")}}
+                    {{formularioRemoverEstudiante.codigoEstudianteRemueve(class="inputLogin", placeholder="Codigo estudiante a remover")}}
+                    </div>
+                    {{formularioRemoverEstudiante.removerEstudiante(class="boton", onclick="confirmacionVentana('¿Desea retirar la matricula del alumno seleccionado?')")}}
+                    </form>
+                </div>
+
+                
+            </div>
+
+            <div class="infoProfesorMateria">
+                <p class="pInfo">Nombre Profesor Materia Seleccionada:</p>
+                <p id="nombreProfeConsultarMateria">Nombre Profesor</p>
+                <img src="{{url_for('static', filename='img/fofoUsuario.png')}}" alt="Imagen Profesor" class="imgPequenaProfesor">
+            
+            </div>
+
+            <div class="formularioCrearMateria">
+                <form action="" method="POST" class="contenedorFormQuitaYAgrega">
+                    {{formularioCrearMateria.hidden_tag()}}
+                    <div class="cajaCamposRetirarInsertar">
+                    {{formularioCrearMateria.nombreMateriaCrear(placeholder="Nombre Materia", class="inputLogin")}}
+                    {{formularioCrearMateria.profesorMateria(placeholder="Codigo profesor", class="inputLogin")}}
+                    </div>
+                    {{formularioCrearMateria.crearMateria(class="boton")}}
+                </form>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</section>
+
+
+{% endblock %}

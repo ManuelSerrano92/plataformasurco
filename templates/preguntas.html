@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/estilos.css')}}"> 
+    <title>Preguntas Frecuentes</title>
+</head>
+
+<body>
+    <main>
+        <h1 class="titulo">Preguntas Frecuentes</h1>
+        {% for message in get_flashed_messages() %}
+        <div class="mensaje">
+            <p> {{message}} </p>
+        </div>
+        {% endfor %} 
+        <div class="categorias" id="categorias">
+            <div class="categoria activa" data-categoria="Profesor">
+                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M24 17.99l-7.731-.001 2.731 4h-1.311l-2.736-4h-1.953l-2.736 4h-1.264l2.732-4h-2.95v-1h8.218v-1h3v1h3v-14h-17v.447h-1v-1.447h19v16zm-17.241-9c.649 0 1.293-.213 1.692-.436.755-.42 2.695-1.643 3.485-2.124.215-.13.496-.082.654.114l.009.01c.164.205.145.5-.043.68l-3.371 3.214c-.521.498-.822 1.183-.853 1.902-.095 2.207-.261 6.912-.332 8.834-.016.45-.386.806-.836.806h-.001c-.444 0-.786-.348-.836-.788-.111-.982-.329-3.279-.427-4.212-.04-.384-.279-.613-.584-.614-.304-.002-.523.226-.548.608-.062.921-.266 3.249-.342 4.221-.034.441-.397.785-.84.785h-.001c-.452 0-.823-.356-.842-.809-.097-2.34-.369-8.963-.369-8.963l-1.287 2.331c-.14.254-.445.364-.715.26l-.001-.001c-.228-.088-.371-.305-.371-.54l.022-.157 1.244-4.393c.122-.43.515-.727.963-.727h4.53zm7.241 2h5v-1h-5v1zm0-2h7v-1h-7v1zm-8.626-5c1.241 0 2.25 1.008 2.25 2.25s-1.009 2.25-2.25 2.25c-1.242 0-2.25-1.008-2.25-2.25s1.008-2.25 2.25-2.25zm8.626 3h7v-1h-7v1z"/></svg>
+                <p>Profesor</p>
+            </div>
+            <div class="categoria" data-categoria="Estudiantes">
+                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M4.323 9.699c-.127-.144-.235-.295-.323-.454v-3.021l-3-1.537 10.956-4.687 10.044 5.502h-.001.001v3.498l1 2h-3l1-2v-3.097l-2 .802v2.49c-.08.163-.188.318-.318.466.347.95.398 2.083.404 2.635 1.36-.482 2.645.822 2.364 3.108-.203 1.66-1.147 2.94-2.526 3.431-2.417 4.773-6.285 5.144-7.415 5.144-1.129 0-4.998-.372-7.414-5.144-1.38-.491-2.324-1.771-2.527-3.431-.296-2.433 1.141-3.583 2.364-3.104.007-.551.057-1.66.391-2.601zm13.53.639c-1.668 1.039-4.56 1.557-6.5 1.557-2.112 0-4.655-.498-6.202-1.5-.156.619-.24 1.293-.24 2.024 0 .528-.425.917-.898.917-.121 0-.244-.025-.365-.08-.061-.028-.153-.05-.257-.05-.112 0-.236.026-.345.099-.899.594-.805 3.834 1.395 4.594.22.076.405.238.511.45 2.162 4.296 5.565 4.63 6.557 4.63s4.396-.334 6.557-4.63c.107-.212.291-.374.511-.45 2.199-.76 2.294-4 1.396-4.594-.367-.245-.636.031-.968.031-.472 0-.898-.387-.898-.917 0-.753-.088-1.447-.254-2.081zm.147-1.418c-.82 1.107-4.19 1.975-6.647 1.975-2.762 0-5.512-.857-6.353-1.946v-2.214l6.114 3.133 6.886-2.761v1.813zm-6.097-7.81l7.76 4.251-8.499 3.41-7.812-4.002 8.551-3.659z"/></svg>
+                <p>Estudiantes</p>
+            </div>
+            <div class="categoria" data-categoria="Super-Administrador">
+                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c-3.371 2.866-5.484 3-9 3v11.535c0 4.603 3.203 5.804 9 9.465 5.797-3.661 9-4.862 9-9.465v-11.535c-3.516 0-5.629-.134-9-3zm0 1.292c2.942 2.31 5.12 2.655 8 2.701v10.542c0 3.891-2.638 4.943-8 8.284-5.375-3.35-8-4.414-8-8.284v-10.542c2.88-.046 5.058-.391 8-2.701zm5 7.739l-5.992 6.623-3.672-3.931.701-.683 3.008 3.184 5.227-5.878.728.685z"/></svg>
+                <p>Super Administrador</p>
+            </div>
+
+        </div>
+
+        <div class="preguntas">
+
+            <!-- Preguntas Profesor -->
+            <div class="contenedor-preguntas activo" data-categoria="Profesor">
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Puedo matricular estudiantes en mis cursos? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">No, el encargado de las matrículas es el administrador.</p>
+                </div>
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Puedo ver la información relacionada con varias de mis materias? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">El profesor puede ver los detalles de cada materia accionando el Botón que la relaciona en la vista de Administrar Materias.</p>
+                </div>
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Puedo editar la información que ya registré? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Para editar las notas de las actividades debes registrarlas nuevamente relacionando id de alumno y id de actividad.</p>
+                </div>
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Porqué no puedo registrar actividades? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Una materia debe tener mínimo 4 actividades y máximo 8. </p>
+                </div>
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Cómo puedo reportar un error? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Puedes accionar el botón reportar Error para comunicarte directamente con el equipo de trabajo TIC de la Universidad Surcolombiana.</p>
+                </div>
+            </div>
+
+            <!-- Preguntas Estudiantes -->
+            <div class="contenedor-preguntas" data-categoria="Estudiantes">
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Puedo cambiar mi información personal? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Sólo es posible cambiar tu correo, tu teléfono y tu contraseña.</p>
+                </div>
+                <div class="contenedor-pregunta">
+
+                    <p class="pregunta">¿Porqué no aparezco en la materia? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Consulta a tu profesor o administrador para que verifique que estás matriculado en la materia.</p>
+
+                </div>
+                <div class="contenedor-pregunta">
+
+                    <p class="pregunta">¿Puedo ver los detalles de las actividades? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">En la vista de Ver Información es posible ver las actividades realizadas, su calificación y retroalimentación, además de las actividades pendientes, la nota definitiva de la materia y el promedio del semestre. </p>
+
+                </div>
+                <div class="contenedor-pregunta">
+
+                    <p class="pregunta">¿Puedo enviar mis tareas a travéz de la aplicación? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Por el momento no es posible realizar envíos de archivo a través de la aplicación por motivos de poca capacidad de ancho de banda y del servicio de almacenamiento gratuito. </p>
+
+                </div>
+                <div class="contenedor-pregunta">
+
+                    <p class="pregunta">¿Cómo puedo reportar un error? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Puedes accionar el botón reportar Error para comunicarte directamente con el equipo de trabajo TIC de la Universidad Surcolombiana.</p>
+
+                </div>
+            </div>
+
+            <!-- Preguntas Super administrador -->
+
+            <div class="contenedor-preguntas" data-categoria="Super-Administrador">
+                <div class="contenedor-pregunta">
+
+                    <p class="pregunta">¿Cómo registro a las personas? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">En la ventana de Registrar Usuarios puedes registrar tanto estudiantes como profesores.</p>
+
+                </div>
+
+                <div class="contenedor-pregunta">
+
+                    <p class="pregunta">¿Cómo puedo crear una materia? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Para crear una materia es necesario relacionar un nombre de materia con un id de profesor en la vista de Administrar Materias.</p>
+
+                </div>
+                <div class="contenedor-pregunta">
+
+                    <p class="pregunta">¿Cómo puedo matricular estudiantes? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Una vez creada la materia puedes matricularle los estudiantes con la lista de estudiantes y los botones de agregar o de remover siempre y cuando la materia esté seleccionada en la interfaz.</p>
+
+                </div>
+                <div class="contenedor-pregunta">
+
+                    <p class="pregunta">¿Puedo eliminar las materias? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Es posible eliminar las materias usando los botones de X en la vista de Administrar Materias.	</p>
+
+                </div>
+                <div class="contenedor-pregunta">
+
+                    <p class="pregunta">¿Puedo editar el registro? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Puedes eliminar los usuarios y volverlos a registrar.	</p>
+
+                </div>
+                <div class="contenedor-pregunta">
+
+                    <p class="pregunta">¿Cómo puedo reportar un error? <img src="{{url_for('static', filename='img/suma.svg')}}" alt="Abrir Respuesta" /></p>
+                    <p class="respuesta">Puedes accionar el botón reportar Error para comunicarte directamente con el equipo de trabajo	</p>
+
+                </div>
+            </div>
+
+            <div >
+                <button class="buttonAtras" onclick="goBack()">Atras</button>
+            </div>
+
+
+
+
+        </div>
+
+        <!-- popup cambiar boton faq -->
+
+
+
+        </div>
+        <button class="buttonAtras" id="reportarerror">Reportar Error</button>
+        <div class="ventana-emergente" id="ventana-emergente">
+            <div class="popup" id="popup">
+                <div class="contenedor-boton-cerrar-popup">
+                    <button type="submit" value="btn-cerrar-popup" class="btn-cerrar-popup" id="btn-cerrar-popup"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg></button>
+                </div>
+
+                <h1>Reporte de error</h1>
+                <form action="" method="post" name="formulario-popup" id="formulario-popup">
+                    {{formularioError.hidden_tag()}}
+
+                    <div class="contenedor-popup">
+
+                        <p>Asunto:
+                            <div class="contenedor-datos">
+                                {{formularioError.asunto(id="asunto-popup", placeholder="Asunto")}}
+                                
+                            </div>
+                        </p>
+                        <p>Correo:
+                            <div class="contenedor-datos">
+                                {{formularioError.correo(id="correo-popup", placeholder="Correo electronico")}}
+                                
+                            </div>
+
+                        </p>
+                        <div class="contenedor-datos-rol">
+                            <p>
+                                {{formularioError.rol()}}
+
+                            </p>
+                        </div>
+                        <p>Mensaje:
+                            <div class="contenedor-datos">
+                                
+                                {{formularioError.reporte(id="mensaje-popup", placeholder=" Escriba su mansaje")}}
+                            </div>
+                        </p>
+                        <div class="contenedor-boton-enviar-popup">
+                            
+                            {{formularioError.enviar(class="enviar-popup", id="enviar-popup")}}
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+
+    <script src="{{url_for('static', filename='js/categorias.js')}}"></script> 
+    <script src="{{url_for('static', filename='js/popup.js')}}"></script>
+    <script src="{{url_for('static', filename='js/preguntasFrecuentes.js')}}"></script>
+</body>
+
+</html>

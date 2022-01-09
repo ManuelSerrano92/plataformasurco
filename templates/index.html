@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %} Sistema de administración de notas {% endblock %}
+
+{% block content %}
+<body>
+    
+
+    <header>
+        <div class="logoLogin">
+            <img src="{{url_for('static', filename='img/logodef.png')}}" alt="logo universidad">
+        </div>
+    </header>
+    <section class=sectionLogin>
+
+        <form name="login" method="post" action="">
+            {{form.hidden_tag()}}
+            <div class="contenedorEnLogin">
+                {{form.usuario(size=30, placeholder="Usuario", class="inputLogin")}}
+            </div>
+            <div class="contenedorEnLogin">
+                {{form.contrasena(size=30, placeholder="Contraseña", class="inputLogin")}}
+            </div>
+            {% for message in get_flashed_messages() %}
+            <div class="contenedorEnLogin">
+                <p class="mensajeLogin"> {{message}} </p>
+            </div>
+            {% endfor %}
+            <div class="contenedorEnLogin">
+                <a href="">¿Olvidó su contraseña?</a>
+            </div>
+            <div id="btnLogin" class="contenedorEnLogin">
+                {{form.enviar(class="inputLogin")}}
+            </div>
+
+
+        </form>
+        
+    </section>
+    <footer>
+
+    </footer>
+
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "baseContenido.html" %}
+
+{% block section %}
+
+
+<section class="sectionPrincipales">
+
+    <h1>REGISTRAR USUARIO</h1>
+
+    {% for message in get_flashed_messages() %}
+    <div class="mensaje">
+        <p> {{message}} </p>
+    </div>
+    {% endfor %} 
+
+    <form action="" name="formularioRegistro" method="POST" class="formularioRegistro">
+        {{form.hidden_tag()}}
+        <div class="izquierdaFormularioRegistro">
+            <p class="pInfo">Nombre: </p> {{form.nombre(size=30, class="inputLogin")}}
+            <p class="pInfo">Apellido: </p> {{form.apellido(size=30, class="inputLogin")}}
+            <p class="pInfo">Código: </p> {{form.codigo(size=4, class="inputLogin")}}
+            <p class="pInfo">Teléfono/Móvil: </p> {{form.telefono(size=12, class="inputLogin")}}
+            <p class="pInfo">Correo: </p> {{form.correo(class="inputLogin")}}
+            <p class="pInfo">Rol: </p>
+            <div class="botonRadio">
+                {{form.rol()}}
+            </div>
+            
+        </div>
+        <div id="derechaFormularioRegistro">
+            <p class="pInfo">Usuario:</p>{{form.usuario(size=20, class="inputLogin")}}
+            <p class="pInfo">Contraseña:</p> {{form.contrasena(size=20, class="inputLogin")}}
+            <div class="botonRegistrar">
+                {{form.crear(class="boton", onclick="alertaVentana('Usuario enviado, revise el mensaje de confirmación en la página.')")}}
+            </div>
+
+        </div>
+        
+        
+    </form>
+
+</section>
+
+
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "baseContenido.html" %}
+
+{% block section %}
+
+<script src="{{url_for('static', filename='js/informacion.js')}}"></script>
+
+<section class="sectionPrincipales" onload="cargueInformacion()">
+
+    <h1>INFORMACIÓN DE USUARIO</h1>
+
+    {% for message in get_flashed_messages() %}
+    <div id="userNameCambioContra" class="mensaje">
+        <p id="flashRolP">{{message}}</p>
+    </div>
+    {% endfor %}
+
+    <div class="contenedorInformacion">
+        <form action="" name="formularioEditarInfoProfesor" method="post">
+            {{formActualizar.hidden_tag()}}
+        <div class="contenedorIzquierdoInformacionProfesores">
+            
+            <p class="pInfo">Nombre</p>
+            <p class="campoEnInfo" id="campoNombreInfo"></p>
+        
+        
+            <p class="pInfo">Apellido</p>
+            <p class="campoEnInfo" id="campoApellidoInfo"></p>
+        
+        
+            <p class="pInfo">Código</p>
+            <p class="campoEnInfo" id="codigoEnInfo"></p>
+        
+        
+            <p class="pInfo">Teléfono Móvil (Editable)</p>
+            {{formActualizar.telefono(id="campoTelefonoInfo", class="inputLogin")}}
+            
+
+            <p class="pInfo">Correo (Editable)</p>
+            {{formActualizar.correo(id="campoCorreoInfo", class="inputLogin")}} 
+
+            <div class="guardarActualizarInfo">
+                {{formActualizar.guardar(class="boton", id="botonGuardarInfoActualizada")}}
+            </div>
+            
+
+        </div>
+        </form>
+
+
+        <div class="contenedorDerechoInformacionProfesores">
+
+            <h1>Cambio contraseña</h1>
+        
+
+            <form id="cambioContra" name="login" method="post">
+                {{formCambioContra.hidden_tag()}}
+                <div class="contenedorCambiarContraseñaInfo">
+
+                    <div id="passwordCambioContra" class="camposLoginCambioContra">
+                        {{formCambioContra.contrasena(placeholder="Digite la contraseña actual", class="inputLogin")}}
+                        {{formCambioContra.contrasenaNueva(placeholder="Digite la nueva contraseña", class="inputLogin")}}
+                        {{formCambioContra.contrasenaConfirmada(placeholder="Confirme la nueva contraseña", class="inputLogin")}}
+                    <div id="btnLoginCambioContra">
+                        {{formCambioContra.cambiar(class="boton")}}
+                    </div>
+                </div>
+            </form>
+        </div>
+                
+    </div>
+    
+
+</section>
+
+
+{% endblock %}

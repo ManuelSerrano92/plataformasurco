@@ -1,0 +1,376 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(236, 235, 233);
+}
+
+body {
+    display: grid;
+    justify-content: center;
+}
+
+.sectionLogin {
+    padding: 25px;
+}
+
+.contenedorEnLogin{
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+input{
+    text-align: center;
+    border: solid;
+    border-width: 5px;
+    border-color: #9E0000;
+    background-color: white;
+}
+
+.inputLogin{
+    width: 100%;
+    height: 40px;
+}
+
+.logoLogin {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    display: grid;
+}
+
+.logoLogin img {
+    margin: auto;
+}
+
+#btnLogin input{
+    background-color: #9E0000;
+    color: white;
+}
+
+.mensaje .mensajeLogin{
+    background-color: rgb(236, 235, 233);
+}
+
+.bodyPrincipales {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 1000px;
+}
+
+
+
+
+
+h1 {
+
+    font-weight: 400;
+    color: #9E0000;
+    text-align: center;
+
+}
+
+.headerPrincipales {
+    display: grid;
+    grid-template-columns: 2fr 300px;
+
+}
+
+.imgPrincipales {
+    justify-self: center;
+}
+
+h1 {
+    border: solid;
+    border-radius: 4px;
+    border-color: #9E0000;
+    background-color: white;
+    justify-content: center;
+    margin : auto;
+    padding: 10px;
+}
+
+.tituloHeader {
+    display: grid;
+    padding: 20px;
+}
+
+.asidePrincipal {
+    padding: 20px;
+}
+
+.asideSuperior {
+    display: grid;
+    grid-template-rows: 4fr 2fr 1.5fr 0.8fr;
+}
+
+li {
+    list-style-type: none;
+}
+
+button ,.boton{
+    background-color: #9E0000;
+    color: white;
+    font-size: 2em;
+    padding: 5px;
+    font-size: 1.0em;
+}
+
+button:focus, .boton:active {
+    background-color: #af2e2e;
+}
+
+button a {
+    color: white;
+}
+
+.asideInferior {
+    display: grid;
+    grid-template-rows: 2fr 2fr 1fr;
+}
+
+.cajitaBotonesAside {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+a {
+    text-decoration: none;
+    color: #9E0000;
+}
+
+.listaLinksAside {
+    display: grid;
+}
+
+section {
+    margin-top: 45px;
+}
+
+
+.listaMaterias {
+
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 0fr 2fr 0.5fr 0fr;
+}
+
+.listaMaterias button {
+    margin: 10px;
+}
+
+.listaMateriasProfe {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.listaMateriasProfe button {
+    margin: 20px;
+}
+
+p {
+    border: solid;
+    border-color: #9E0000;
+    background-color: white;
+    margin: 15px;
+    color: #9E0000;
+    padding: 10px;
+}
+
+.listaGeneralEstudiantes {
+    display: grid;
+    margin: 15px;
+    overflow-y:scroll;
+    max-height: 300px;
+    border: solid;
+    border-color: #9E0000;
+    border-width: 1px;
+    background-color: white;
+}
+
+section div li {
+    margin: 10px;
+    background-color: white;
+}
+
+.contenedorFormQuitaYAgrega {
+    display: grid;
+    grid-template-rows: 0fr 1fr 1fr;
+    margin: auto;
+}
+
+.cajaCamposRetirarInsertar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.infoProfesorMateria {
+    display: grid;
+    margin: auto;
+    justify-content: center;
+}
+
+.pInfo {
+    background-color: transparent;
+    border: none;
+}
+
+.botonesParaBuscar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contenedorFormulariosBusqueda {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.contenedorFormulariosBusquedaAdentro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#rol li {
+    background-color: transparent;
+}
+
+.formularioRegistro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.formularioRegistro div {
+    margin: 10px;
+}
+
+.derechaFormularioRegistro {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+    align-content: end;
+}
+
+#crear {
+    width: 100%;
+}
+
+.estado {
+    display: grid;
+}
+
+.contenedorParaCalificar {
+    display: grid;
+}
+
+.formularioCalificarActividad {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.cajaTexto {
+    width: 90%;
+    margin: auto;
+    height: 150px;
+    background-color: white;
+    border: solid;
+    border-color: #9E0000;
+    align-self: center;
+}
+
+.formularioCalificarActividad .boton {
+    height: 35px;
+    margin: 20px;
+    align-self: end;
+}
+
+#cajaEliminarActividad {
+    margin-top: 30px;
+}
+
+.contenedorIzquierdoInformacionProfesores {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#botonGuardarInfoActualizada {
+    width: 100%;
+    margin: 10px;
+}
+
+.camposLoginCambioContra {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#btnLoginCambioContra input {
+    width: 100%;
+}
+
+#botonRefrescar {
+    width: 100%;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 820px) {
+    .bodyPrincipales {
+        grid-template-columns: 1fr 2fr;
+    }
+    .headerPrincipales {
+        display: grid;
+        grid-template-rows: 1fr 300px;
+        grid-template-columns: 1fr;
+        margin: auto;
+    }
+    .listaMaterias {
+        grid-template-columns: 2fr 0.5fr 0fr;
+    }
+    .cajaCamposRetirarInsertar {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .formularioRegistro {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .listaMateriasProfe {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .formularioCalificarActividad {
+        grid-template-columns: 1fr;
+    }
+    .cajaTexto {
+        width: 100%;
+    }
+    .contenedorIzquierdoInformacionProfesores {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .camposLoginCambioContra {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .bodyPrincipales {
+        grid-template-columns: 1fr;
+
+    }
+    .fotoUsuario, .imgPequenaProfesor {
+        width: 0px;
+        height: 0px;
+    }
+    .asideSuperior {
+        grid-template-rows: 0.1fr 2fr 1.5fr 0.8fr;
+    }
+    section {
+        margin-top: 15px;
+    }
+}
+

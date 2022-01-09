@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %} Administrador {% endblock %}
+
+{% block content %}
+
+<script src="{{url_for('static', filename='js/scripts.js')}}"></script>
+
+
+<body class="bodyPrincipales" onload="contenidoPaginaAside()">
+
+    <aside class="asidePrincipal">
+        <div class="asideSuperior">
+            <img src="{{url_for('static', filename='img/fofoUsuario.png')}}" alt="fotoUsuario" class="fotoUsuario">
+            <h1 class="usuarioAside" id="tituloRol"></h1>
+            <div id="listaInfoSesion" class="listaInfoSesion">
+
+            </div>
+            <button class="button" id="reportarerror"> <a href= {{url_for("main.salir")}} > Salir </a></button>
+            
+        </div>
+        <div class="asideInferior">
+            <h1>Panel de Navegación</h1>
+
+            <div id="listaLinksAside" class="listaLinksAside">
+
+            </div>
+            <div class="cajitaBotonesAside">
+            <button class="button"><a href="{{url_for("main.preguntas")}}">FAQ</a></button>
+
+            </div>
+        </div>
+        <p class="pInfo">Derechos reservados para 8Team-Devs®, los datos consignados y procesos realizados en esta plataforma están en tutela de la Universidad Surcolombiana. <br> Email de contacto: surcoplataforma@gmail.com</p>
+    
+    </aside>
+
+    <div>
+        <header class="headerPrincipales">
+            <div class="tituloHeader">
+                <h1 id="tituloParaHeader">Plataforma Notas Surcolombiana</h1>
+            </div>
+            <img src="{{url_for('static', filename='img/logodef.png')}}" alt="logo universidad" class="imgPrincipales">
+        </header>
+
+        {% block section %}
+
+        {% endblock %}
+
+
+    </div>
+
+
+    
+
+</body>
+
+
+
+
+
+{% endblock %}

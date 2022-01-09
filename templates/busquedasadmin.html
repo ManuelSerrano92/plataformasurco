@@ -1,0 +1,45 @@
+{% extends "baseContenido.html" %}
+
+{% block section %}
+
+<section class="sectionPrincipales">
+    
+    <h1>VER REGISTRO</h1>
+
+
+    {% for message in get_flashed_messages() %}
+    <div class="mensaje">
+        <p> {{message}} </p>
+    </div>
+    {% endfor %}
+
+    <div class="botonesParaBuscar">
+        <button id="botonBuscarProfes" onclick="listaProfesoresAdmin()">Profesores</button>
+        <button id="botonBuscarAlumnos" onclick="listaAlumnosAdmin()">Alumnos</button>
+
+    </div>
+
+    
+    <div class="contenedorListas">
+        <div class="listaGeneralEstudiantes" id="listaGeneralEstudiantes">
+        </div>
+        
+
+    </div>
+    <div class="contenedorFormulariosBusqueda">
+
+
+        
+
+        <input type="text"id="UsuarioABuscar" placeholder="Usuario o código" class="inputLogin">
+        <div class="contenedorFormulariosBusquedaAdentro">
+        <button class= "boton" onclick="buscarInfoUsuarioAdmin()">Buscar</button>
+        <button class= "boton" onclick="eliminarUsuarioAdmin()">Eliminar</button>
+        </div>
+
+    </div>
+
+    
+</section>
+
+{% endblock %}

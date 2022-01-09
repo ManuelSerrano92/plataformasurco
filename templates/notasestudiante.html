@@ -1,0 +1,54 @@
+{% extends "baseContenido.html" %}
+
+{% block section %}
+
+<section class="sectionPrincipales" onload="administrarMaterias()">
+
+    <h1 id="tituloVistaSection"></h1>
+
+
+    <div class="cajaNotasEstudiantes">
+        <div class="contenedorMateriaNotasEstudiante">
+            
+            <div class="materianotasEstudiante">
+                <p id="listaquesseve">Notas por materia</p>
+                <div class="listaGeneralEstudiantes" id="listaParaLlenarNotasMateria">
+                </div> 
+            </div>
+        </div>
+
+        <div  class="contenedorActividadesNotasEstudiante">
+            <div class="actividadesnotasEstudiante">
+                <p>Actividades calificadas</p>
+                <div class="listaGeneralEstudiantes" id="listaParallenarDeActividadesMaterias">
+                </div>                 
+            </div>
+
+            <div class="actividadesnotasEstudiante">
+                <p>Actividades que deben estar completas</p>
+                <div class="listaGeneralEstudiantes" id="listaParaLlenarDeTodasLasActividades">
+                </div> 
+            </div> 
+
+        </div>
+
+        <div>
+            <button onclick="revisarPromedios()" class="boton" id="botonRefrescar">Refrescar Promedios</button>
+        </div>
+
+        <div>
+            <p>PROMEDIO FINAL</p>
+            <p id="promedioFinal"></p>
+
+        </div>
+        
+
+
+    </div>
+        
+
+</section>
+
+
+
+{% endblock %}

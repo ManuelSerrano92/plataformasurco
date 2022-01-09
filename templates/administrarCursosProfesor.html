@@ -1,0 +1,94 @@
+{% extends "baseContenido.html" %}
+
+{% block section %}
+
+
+<section class="sectionPrincipales" onload="administrarMaterias()">
+
+
+    <h1 id="tituloVistaSection"></h1>
+
+    {% for message in get_flashed_messages() %}
+    <div class="mensaje">
+        <p> {{message}} </p>
+    </div>
+    {% endfor %}
+
+    
+    
+    <div class="cajaMaterias">
+
+        <div id="listaMaterias" class="listaMateriasProfe">
+        </div>
+
+        <div class="contenedorMateria">
+            <div class= "materia">
+
+                <p id="nombreMateriaAdministrarMateria"></p>
+                <p>Lista de los estudiantes matriculados en la materia:</p>
+                <div class="listaGeneralEstudiantes" id="listaEstudiantesMatriculados">
+                </div>                      
+
+
+                <div class="estado">
+                    <button class="buttonPequeño" onclick="mostrarActividades()">Ver Actividades</button></a>
+                    <p id="materiaActividadesQueSeVen"></p>
+                    <div id="listaActividadesMateria" class="listaGeneralEstudiantes">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedorParaCalificar">
+            <button class="buttonPequeño" onclick="mostrarCalificaciones()">Ver Calificaciones</button></a>
+                <p id="calificacionesActividadesQueSeVen"></p>
+                <div class="listaGeneralEstudiantes" id="listaEstudiantesCalificados">
+                </div> 
+        </div>
+
+        <div>
+            <form action=""method="post" class="formularioCalificarActividad">
+                {{formularioCalificarActividad.hidden_tag()}}
+                <p class="pInfo">Id actividad:</p>
+                {{formularioCalificarActividad.idActividad(class="inputLogin")}}
+                <p class="pInfo">Id alumno:</p>
+                {{formularioCalificarActividad.idAlumno(class="inputLogin")}}
+                <p class="pInfo">Nota actividad:</p>
+                {{formularioCalificarActividad.notaActividad(class="inputLogin")}}
+                <div class="contenedorcajaTexto">
+                    <p class="pInfo">Retroalimentación</p>
+                        {{formularioCalificarActividad.retroalimentacion(class="cajaTexto")}}
+                </div>
+                {{formularioCalificarActividad.enviar(class="boton")}}
+            </form>
+        </div>
+
+        <h1>Crear Actividad:</h1>
+
+        <div>
+            <form action="" method="post" class="formularioCalificarActividad">
+                {{formularioCrearActividad.hidden_tag()}}
+                <p class="pInfo">Nombre de Actividad</p>
+                {{formularioCrearActividad.nombreActividad(class="inputLogin")}}
+                <p class="pInfo">Materia Asociada</p>
+                {{formularioCrearActividad.materia(class="inputLogin")}}
+                <div class="contenedorcajaTexto">
+                    <p class="pInfo">Descripción</p>
+                        {{formularioCrearActividad.descripcion(class="cajaTexto")}}
+                </div>
+                {{formularioCrearActividad.enviar(class="boton")}}
+
+            </form>
+        </div>
+        <div class="formularioCalificarActividad" id="cajaEliminarActividad">
+            <input type="text" id="actividadAEliminar" class="inputLogin" placeholder="Id Actividad">
+            <button onclick="eliminarActividad()">Eliminar Actividad</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}
